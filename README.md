@@ -11,7 +11,9 @@ Double check that the folder "UCI HAR Dataset" and the run_analysis.R script are
 Use source("run_analysis.R") command in RStudio.
 
 Two output files should be generated in the current working directory after 1-2mins.
+
 merged_data.txt : it contains a data frame called cleanedData.
+
 data_with_means.txt : it contains a data frame called result
 
 
