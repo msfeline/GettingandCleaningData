@@ -9,7 +9,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 1)	Read X_train.txt, y_train.txt and subject_train.txt from the "./UCI HAR Dataset/train/" folder and store them in trainData,trainLabel and trainSubject variables respectively.
 
-2)	Read X_test.txt, y_test.txt and subject_test.txt from the "./UCI HAR Dataset/train/" folder and store them in testData, testLabeland testsubject variables respectively.
+2)	Read X_test.txt, y_test.txt and subject_test.txt from the "./UCI HAR Dataset/test/" folder and store them in testData, testLabeland testsubject variables respectively.
 
 3)	Concatenate testData to trainData to generate a 10299x561 data frame, joinData; concatenate testLabel totrainLabel to generate a 10299x1 data frame, joinLabel; concatenate testSubject to trainSubject to generate a 10299x1 data frame, joinSubject.
 
