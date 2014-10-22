@@ -1,4 +1,4 @@
-This file describes the variables, the data, and any transformations or work to clean up the data.
+This file describes the variables, the data, transformations to clean up the data.
 •	where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
