@@ -2,32 +2,32 @@
 # setwd
 
 trainData <- read.table("./UCI HAR Dataset/train/X_train.txt")
-dim(trainData) # 7352*561
+dim(trainData) 
 head(trainData)
 
 trainLabel <- read.table("./UCI HAR Dataset/train/y_train.txt")
 table(trainLabel)
 trainSubject <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 testData <- read.table("./UCI HAR Dataset/test/X_test.txt")
-dim(testData) # 2947*561
+dim(testData) 
 testLabel <- read.table("./UCI HAR Dataset/test/y_test.txt") 
 table(testLabel) 
 
 testSubject <- read.table("./UCI HAR Dataset/test/subject_test.txt")
 joinData <- rbind(trainData, testData)
-dim(joinData) # 10299*561
+dim(joinData) 
 joinLabel <- rbind(trainLabel, testLabel)
-dim(joinLabel) # 10299*1
+dim(joinLabel)
 joinSubject <- rbind(trainSubject, testSubject)
-dim(joinSubject) # 10299*1
+dim(joinSubject) 
 
 # Step2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 features <- read.table("./UCI HAR Dataset/features.txt")
-dim(features)  # 561*2
+dim(features) 
 meanStdIndices <- grep("mean\\(\\)|std\\(\\)", features[, 2])
-length(meanStdIndices) # 66
+length(meanStdIndices) 
 joinData <- joinData[, meanStdIndices]
-dim(joinData) # 10299*66
+dim(joinData)
 names(joinData) <- gsub("\\(\\)", "", features[meanStdIndices, 2]) 
 names(joinData) <- gsub("mean", "Mean", names(joinData)) 
 names(joinData) <- gsub("std", "Std", names(joinData)) 
@@ -45,7 +45,7 @@ names(joinLabel) <- "activity"
 # Step4. Appropriately labels the data set with descriptive activity names. 
 names(joinSubject) <- "subject"
 cleanedData <- cbind(joinSubject, joinLabel, joinData)
-dim(cleanedData) # 10299*68
+dim(cleanedData)
 write.table(cleanedData, "merged_data.txt") # this part will write out the 1st dataset
 
 # Step5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
